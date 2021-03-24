@@ -1,26 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <input-rich-text v-model="myEditorContent" />
+  <h2>This is my editor content</h2>
+  <pre>
+    <code>{{ myEditorContent }}</code>
+  </pre>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import { ref } from "vue";
+import InputRichText from "./components/InputRichText.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    InputRichText,
+  },
+  setup: () => {
+    return {
+      myEditorContent: ref("My Initial Content...."),
+    };
   },
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
