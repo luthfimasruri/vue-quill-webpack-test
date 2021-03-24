@@ -2,7 +2,9 @@
   <input-rich-text v-model="myEditorContent" />
   <h2>This is my editor content</h2>
   <pre>
-    <code>{{ myEditorContent }}</code>
+    <code>
+{{ myEditorContent }}
+    </code>
   </pre>
 </template>
 
